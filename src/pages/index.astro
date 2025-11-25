@@ -9,12 +9,12 @@ import PageLayout from '@/layouts/BaseLayout.astro'
 import ProjectCard from '@/components/home/ProjectCard.astro'
 import Section from '@/components/home/Section.astro'
 import SkillLayout from '@/components/home/SkillLayout.astro'
-import avatar from '@/assets/avatar.png'
+// import avatar from '@/assets/avatar.png'
 import config from '@/site-config'
 
-const languages = ['Html', 'JavaScript', 'CSS', 'Shell']
-const frontend = ['TypeScript', 'Vite', 'Webpack', 'Astro']
-const backend = ['Vercel', 'Waline']
+const languages = ['Terraform', 'CloudFormation', 'CSS', 'PowerShell', 'YAML', 'Python']
+const infra = ['Kubernetes', 'GitOps', 'Flux', 'VMware', 'SonicWall', 'UniFi', 'F5']
+const clouds = ['AWS', 'Azure']
 
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
@@ -25,8 +25,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
   <main class='flex w-full flex-col items-center'>
     <section class='animate mb-10 flex flex-col items-center gap-y-7' id='content-header'>
       <Image
-        src={avatar}
+        src='https://gravatar.com/avatar/852046e1fb4620d1f56909b0d0bf0b8d0d640c6b79c6f629fa72a46de685c389?size=256'
         alt='profile'
+        width={256}
+        height={256}
         class='h-28 w-auto rounded-full border p-1'
         loading='eager'
       />
@@ -48,7 +50,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         </div>
       </div>
 
-      {/* Order a Tesla */}
+      {/* Order a Tesla
       <a
         href='https://t.co/c6G2z2ynUs'
         target='_blank'
@@ -62,16 +64,110 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         </span>
         <p class='font-medium text-muted-foreground'>Order a Tesla</p>
       </a>
+    */}
     </section>
 
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
       <Section title='About'>
         <p class='text-muted-foreground'>Cloud Engineer</p>
         <p class='text-muted-foreground'>
-          I am a Cloud Engineer working on AWS, Azure, Infrastructure & Automation, and GitOps / Kubernetes. 
+          I am a Cloud Engineer working on AWS, Azure, Infrastructure & Automation, and GitOps / Kubernetes.
           I like to continuously expand my knowledge using my HomeLab environment to deploy and experiment with open source technologies.
         </p>
         <Button title='More about me' class='w-fit self-end' href='/about' variant='ahead' />
+      </Section>
+      <Section title='Education'>
+        <Card
+          as='a'
+          heading='B.S. Information Technology'
+          subheading='Point Park University - Pittsburgh, PA'
+          date='2004'
+          href='https://www.pointpark.edu/index'
+          target='_blank'
+        >
+          {
+            /* <ul class='ms-4 list-disc text-muted-foreground'>
+              <li>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
+                molestiae laboriosam pariatur!
+              </li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
+            </ul> */
+          }
+        </Card>
+      </Section>
+      <Section title='Certifications'>
+        <Card
+          as='a'
+          href='https://www.credly.com/users/joe-pipitone'
+          target='_blank'
+          heading='AWS Certified Solutions Architect - Associate'
+          subheading='Amazon Web Services'
+          date='2/28/2024'
+        >
+        </Card>
+        <Card
+          as='a'
+          href='https://www.credly.com/users/joe-pipitone'
+          target='_blank'
+          heading='AWS Certified Cloud Practitioner'
+          subheading='Amazon Web Services'
+          date='12/16/2022'
+        >
+        </Card>
+        <Card
+          as='a'
+          href='https://www.credly.com/users/joe-pipitone'
+          target='_blank'
+          subheading='Microsoft'
+          heading='Microsoft Certified: Azure Fundamentals'
+          date='3/18/2022'
+        >
+        </Card>
+        <Card
+          as='a'
+          href='https://www.credly.com/users/joe-pipitone'
+          target='_blank'
+          subheading='New Horizons'
+          heading='ITIL 4 Foundation'
+          date='11/1/2022'
+        >
+        </Card>
+      </Section>
+      <Section title='Skills'>
+        <SkillLayout title='Cloud Platforms' skills={clouds} />
+        <SkillLayout title='Languages' skills={languages} />
+        <SkillLayout title='Infrastructure' skills={infra} />
+      </Section>
+      <Section title='Experience'>
+        <Card
+          heading='Constellation Brands, Inc.'
+          subheading='Cloud Engineer'
+          date='March 2022 - Present'
+        >
+          <ul class='ms-4 list-disc text-muted-foreground'>
+            <li>
+              Own an AWS enterprise foundation.
+            </li>
+            <li>
+              Established governance standards and led cost-reduction initiatives.  
+            </li>
+          </ul>
+        </Card>
+        <Card
+          heading='Constellation Brands'
+          subheading='Senior Office 365 Engineer'
+          date='March 2020 - May 2022'
+        >
+          <ul class='ms-4 list-disc text-muted-foreground'>
+            <li>
+              Owned an Enterprise Microsoft 365 Environment.
+            </li>
+            <li>
+              Led post-acquisition integrations and divestiture separations, including migrations and transitions.
+            </li>
+          </ul>
+        </Card>
       </Section>
       {
         allPostsByDate.length > 0 && (
@@ -89,56 +185,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       }
 
       {
-        /* <Section title='Experience'>
-      <Card
-        heading='Lorem Ipsum'
-        subheading='Sit amet consectetur'
-        date='Dec 2022 - Nov 2023'
-        imagePath='/src/assets/about-astro.png'
-        altText='Lorem, ipsum dolor sit'
-        imageClass='h-12 w-auto md:-start-16'
-      >
-        <ul class='ms-4 list-disc text-muted-foreground'>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-            molestiae laboriosam pariatur!
-
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-          </li>
-        </ul>
-      </Card>
-      <Card
-        heading='Lorem Ipsum'
-        subheading='Sit amet consectetur'
-        date='Dec 2022 - Nov 2023'
-        imagePath='/src/assets/about-astro.png'
-        altText='Lorem, ipsum dolor sit'
-        imageClass='h-12 w-auto md:-start-16'
-      />
-    </Section> */
-      }
-      <Section title='Education'>
-        <Card
-          as='a'
-          heading='B.S. Information Technology'
-          subheading='Point Park University - Pittsburgh, PA'
-          date='2004'
-          href='https://www.pointpark.edu/index'
-          target='_blank'
-        >
-          {
-            /* <ul class='ms-4 list-disc text-muted-foreground'>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-            molestiae laboriosam pariatur!
-          </li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-        </ul> */
-          }
-        </Card>
-      </Section>
-
-      <Section title='Website List'>
+        /* <Section title='Website List'>
         <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
           <ProjectCard
             href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
@@ -165,23 +212,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
             imagePath='/src/assets/projects/wen-qiao-g_w8I64FiO0-unsplash.jpg'
           />
         </div>
-      </Section>
+      </Section> */
+      }
 
-      <Section title='Certifications'>
-        <Card
-          as='a'
-          heading='Lorem ipsum'
-          subheading='Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel, at eum oratio possit voluptatum. Dicat ceteros cu vim. Impetus fuisset ullamcorper pri cu, his posse iisque ad, aliquam honestatis usu id.'
-          date='July 2024'
-          href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        />
-      </Section>
-
-      <Section title='Skills'>
-        <SkillLayout title='Languages' skills={languages} />
-        <SkillLayout title='Frontend' skills={frontend} />
-        <SkillLayout title='Backend' skills={backend} />
-      </Section>
     </div>
     <Quote class='mt-12' />
   </main>

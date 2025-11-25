@@ -60,17 +60,6 @@ export const theme: ThemeUserConfig = {
     year: `© ${new Date().getFullYear()}`,
     // year: `© 2019 - ${new Date().getFullYear()}`,
     links: [
-      // Registration link
-      {
-        title: 'Moe ICP 114514',
-        link: 'https://icp.gov.moe/?keyword=114514',
-        style: 'text-sm' // Uno/TW CSS class
-      },
-      {
-        title: 'Travelling',
-        link: 'https://www.travellings.cn/go.html',
-        style: 'text-sm'
-      },
       // Privacy Policy link
       {
         title: 'Site Policy',
@@ -78,7 +67,7 @@ export const theme: ThemeUserConfig = {
         pos: 2 // position set to 2 will be appended to copyright line
       }
     ],
-    /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
+    /** Enable displaying a "Astro & Pure theme powered" link in your site's footer. */
     credits: true,
     /** Optional details about the social media accounts for this site. */
     social: { github: 'https://github.com/cworld1/astro-theme-pure' }
@@ -131,13 +120,14 @@ export const integ: IntegrationUserConfig = {
     // https://developer.hitokoto.cn/sentence/#%E8%AF%B7%E6%B1%82%E5%9C%B0%E5%9D%80
     // server: 'https://v1.hitokoto.cn/?c=i',
     // target: `(data) => (data.hitokoto || 'Error')`
-    // Quoteable API (down temporarily)
+    // Quoteable API - English quotes (curated, short)
     // https://github.com/lukePeavey/quotable
-    // server: 'https://api.quotable.io/quotes/random?maxLength=60',
-    // target: `(data) => data[0].content || 'Error'`
+    server: 'https://api.quotable.io/quotes/random?maxLength=60',
+    target: `(data) => data[0].content || 'Error'`
     // DummyJSON
-    server: 'https://dummyjson.com/quotes/random',
-    target: `(data) => (data.quote.length > 80 ? \`\${data.quote.slice(0, 80)}...\` : data.quote || 'Error')`
+    //server: 'https://dummyjson.com/quotes/random',
+    // target: `(data) => (data.quote || 'Error')`
+    // target: `(data) => (data.quote.length > 80 ? \`\${data.quote.slice(0, 80)}...\` : data.quote || 'Error')`
   },
   // UnoCSS typography
   // See: https://unocss.dev/presets/typography
@@ -164,7 +154,7 @@ export const integ: IntegrationUserConfig = {
     server: 'https://astro-theme-pure-waline.arthals.ink/',
     // Refer https://waline.js.org/en/guide/features/emoji.html
     emoji: ['bmoji', 'weibo'],
-    // Refer https://waline.js.org/en/reference/client/props.html
+    // Refer https://waline.js.org/reference/client/props.html
     additionalConfigs: {
       // search: false,
       pageview: true,
