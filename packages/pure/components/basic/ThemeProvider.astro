@@ -6,9 +6,9 @@
 <script is:inline>
   function simpleSetTheme() {
     let theme = localStorage.getItem('theme')
-    // If undefined or 'system', get from system
+    // If undefined or 'system', default to dark mode
     if (!theme || theme === 'system') {
-      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      theme = 'dark' // Default to dark mode instead of system preference
     }
     document.documentElement.classList.toggle('dark', theme === 'dark')
     document

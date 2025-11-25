@@ -7,7 +7,7 @@ export const theme: ThemeUserConfig = {
   /** Will be used in index page & copyright declaration */
   author: 'Joseph Pipitone',
   /** Description metadata for your website. Can be used in page metadata. */
-  description: 'Stay hungry, stay foolish',
+  description: 'Boil things down to the most fundamental truths and reason up from there.',
   /** The default favicon for your site which should be a path to an image in the `public/` directory. */
   favicon: '/favicon/favicon.ico',
   /** Specify the default language for this site. */
@@ -40,7 +40,33 @@ export const theme: ThemeUserConfig = {
     //   tag: 'meta',
     //   attrs: { name: 'telegram:channel', content: '@cworld0_cn' },
     //   content: ''
-    // }
+    // },
+    // Open Graph meta tags for social sharing
+    {
+      tag: 'meta',
+      attrs: { property: 'og:image', content: '/images/social-card.png' }
+    },
+    {
+      tag: 'meta',
+      attrs: { property: 'og:image:width', content: '1200' }
+    },
+    {
+      tag: 'meta',
+      attrs: { property: 'og:image:height', content: '630' }
+    },
+    {
+      tag: 'meta',
+      attrs: { property: 'og:image:alt', content: 'Pipitone Labs - Cloud Engineering & DevOps' }
+    },
+    // Twitter meta tags for social sharing
+    {
+      tag: 'meta',
+      attrs: { name: 'twitter:image', content: '/images/social-card.png' }
+    },
+    {
+      tag: 'meta',
+      attrs: { name: 'twitter:image:alt', content: 'Pipitone Labs - Cloud Engineering & DevOps' }
+    }
   ],
   customCss: [],
 
