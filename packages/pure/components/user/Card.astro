@@ -8,9 +8,10 @@ type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
   subheading?: string
   date?: string
   class?: string
+  target?: string
 }
 
-const { as: Tag = 'div', class: className, href, heading, subheading, date } = Astro.props
+const { as: Tag = 'div', class: className, href, heading, subheading, date, target } = Astro.props
 ---
 
 <Tag
@@ -20,6 +21,7 @@ const { as: Tag = 'div', class: className, href, heading, subheading, date } = A
     className
   )}
   href={href}
+  target={target}
 >
   <div class='flex flex-col gap-y-1.5'>
     <div class='flex flex-col gap-y-0.5'>
