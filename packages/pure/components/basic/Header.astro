@@ -2,6 +2,9 @@
 import config from 'virtual:config'
 
 import { Icon } from '../user'
+
+const menu = config.header.menu.filter(item => item.title !== 'Docs' || import.meta.env.DEV)
+
 ---
 
 <header-component

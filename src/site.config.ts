@@ -171,9 +171,9 @@ export const integ: IntegrationUserConfig = {
     // Repository ID
     repoId: 'R_kgDOQc1RCw',
     // Discussion category
-    category: 'General',
+    category: 'Comments',
     // Category ID
-    categoryId: 'DIC_kwDOQc1RC84CzE1Y',
+    categoryId: 'DIC_kwDOQc1RC84CzFmp',
     // Mapping between the page and the discussion
     mapping: 'pathname',
     // Reactions enabled
@@ -185,7 +185,9 @@ export const integ: IntegrationUserConfig = {
     // Theme
     theme: 'dark',
     // Language
-    lang: 'en'
+    lang: 'en',
+    // Strict loading mode
+    strict: 0
   }
 }
 

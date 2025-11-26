@@ -69,7 +69,9 @@ export const IntegrationConfigSchema = () =>
       /** Theme. */
       theme: z.string().default('preferred_color_scheme'),
       /** Language. */
-      lang: z.string().default('en')
+      lang: z.string().default('en'),
+      /** Strict loading mode (0 = load even if discussion not found, 1 = strict). */
+      strict: z.number().default(0)
     })
   })
 

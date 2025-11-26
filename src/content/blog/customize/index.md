@@ -7,6 +7,7 @@ tags:
   - Vercel
   - Supabase
 heroImage: { src: './thumbnail.jpg', color: '#64574D' }
+draft: true
 language: 'English'
 ---
 

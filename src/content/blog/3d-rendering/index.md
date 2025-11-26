@@ -7,6 +7,7 @@ tags:
   - Example
   - 3D
 language: 'English'
+draft: true
 heroImage: { src: './thumbnail.jpg', color: '#D58388' }
 ---
 
