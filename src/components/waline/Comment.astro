@@ -161,4 +161,9 @@ const { class: className } = Astro.props
   :global(.dark) #waline :global(.wl-reaction img) {
     filter: invert(75%);
   }
+
+  /* Hide location to avoid Chinese text from IP geolocation service
+  #waline :global(.wl-addr) {
+    display: none;
+  } */
 </style>

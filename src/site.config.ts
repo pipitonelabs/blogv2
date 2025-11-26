@@ -7,7 +7,7 @@ export const theme: ThemeUserConfig = {
   /** Will be used in index page & copyright declaration */
   author: 'Joseph Pipitone',
   /** Description metadata for your website. Can be used in page metadata. */
-  description: 'Boil things down to the most fundamental truths and reason up from there.',
+  description: 'the most entertaining outcome is the most likely',
   /** The default favicon for your site which should be a path to an image in the `public/` directory. */
   favicon: '/favicon/favicon.ico',
   /** Specify the default language for this site. */
@@ -167,7 +167,7 @@ export const integ: IntegrationUserConfig = {
   waline: {
     enable: true,
     // Server service link
-    server: 'https://astro-theme-pure-waline.arthals.ink/',
+    server: 'https://waline-eight-wheat.vercel.app/',
     // Refer https://waline.js.org/en/guide/features/emoji.html
     emoji: ['bmoji', 'weibo'],
     // Refer https://waline.js.org/reference/client/props.html
@@ -175,6 +175,7 @@ export const integ: IntegrationUserConfig = {
       // search: false,
       pageview: true,
       comment: true,
+      lang: 'en-US',
       locale: {
         reaction0: 'Like',
         placeholder: 'Welcome to comment. (Email to receive replies. Login is unnecessary)'
