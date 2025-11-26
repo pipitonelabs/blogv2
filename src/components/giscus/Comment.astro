@@ -8,7 +8,7 @@ const { class: className } = Astro.props
 {
   config.integ.giscus.enable && (
     <div id="giscus-container" class={cn('not-prose', className)}>
-      <script
+      <script is:inline
         src="https://giscus.app/client.js"
         data-repo={config.integ.giscus.repo}
         data-repo-id={config.integ.giscus.repoId}

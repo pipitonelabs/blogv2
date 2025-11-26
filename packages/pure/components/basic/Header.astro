@@ -25,7 +25,7 @@ const menu = config.header.menu.filter(item => item.title !== 'Docs' || import.m
     >
       <div class='flex flex-col items-center justify-center overflow-hidden sm:flex-row'>
         {
-          config.header.menu.map((item) => (
+          menu.map((item) => (
             <a
               href={item.link}
               class='w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3'
