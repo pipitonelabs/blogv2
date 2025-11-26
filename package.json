@@ -22,6 +22,7 @@
     "@astrojs/check": "^0.9.5",
     "@astrojs/rss": "^4.0.13",
     "@astrojs/vercel": "^9.0.0",
+    "@vercel/analytics": "^1.5.0",
     "@waline/client": "^3.7.1",
     "astro": "^5.15.3",
     "astro-pure": "file:packages/pure",
