@@ -164,24 +164,28 @@ export const integ: IntegrationUserConfig = {
     }
   },
   // Comment system
-  waline: {
+  giscus: {
     enable: true,
-    // Server service link
-    server: 'https://waline-eight-wheat.vercel.app/',
-    // Refer https://waline.js.org/en/guide/features/emoji.html
-    emoji: ['bmoji', 'weibo'],
-    // Refer https://waline.js.org/reference/client/props.html
-    additionalConfigs: {
-      // search: false,
-      pageview: true,
-      comment: true,
-      lang: 'en-US',
-      locale: {
-        reaction0: 'Like',
-        placeholder: 'Welcome to comment. (Email to receive replies. Login is unnecessary)'
-      },
-      imageUploader: false
-    }
+    // GitHub repository for comments (format: owner/repo)
+    repo: 'pipitonelabs/blogv2',
+    // Repository ID
+    repoId: 'R_kgDOQc1RCw',
+    // Discussion category
+    category: 'General',
+    // Category ID
+    categoryId: 'DIC_kwDOQc1RC84CzE1Y',
+    // Mapping between the page and the discussion
+    mapping: 'pathname',
+    // Reactions enabled
+    reactionsEnabled: true,
+    // Emit metadata
+    emitMetadata: false,
+    // Input position
+    inputPosition: 'top',
+    // Theme
+    theme: 'dark',
+    // Language
+    lang: 'en'
   }
 }
 

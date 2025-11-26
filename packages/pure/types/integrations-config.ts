@@ -46,16 +46,30 @@ export const IntegrationConfigSchema = () =>
       options: z.record(z.string(), z.any()).default({ className: 'zoomable' })
     }),
 
-    /** The Waline comment system */
-    waline: z.object({
-      /** Enable the Waline comment system. */
+    /** The Giscus comment system */
+    giscus: z.object({
+      /** Enable the Giscus comment system. */
       enable: z.boolean().default(false),
-      /** The server to use for the Waline comment system. */
-      server: z.string().optional(),
-      /** The emoji to use for the Waline comment system. */
-      emoji: z.array(z.string()).optional(),
-      /** Additional configurations for the Waline comment system. */
-      additionalConfigs: z.record(z.string(), z.any()).default({})
+      /** GitHub repository for comments (format: owner/repo). */
+      repo: z.string(),
+      /** Repository ID. */
+      repoId: z.string(),
+      /** Discussion category. */
+      category: z.string().default('Announcements'),
+      /** Category ID. */
+      categoryId: z.string(),
+      /** Mapping between the page and the discussion. */
+      mapping: z.enum(['pathname', 'url', 'title']).default('pathname'),
+      /** Enable reactions. */
+      reactionsEnabled: z.boolean().default(true),
+      /** Emit metadata. */
+      emitMetadata: z.boolean().default(false),
+      /** Input position. */
+      inputPosition: z.enum(['top', 'bottom']).default('bottom'),
+      /** Theme. */
+      theme: z.string().default('preferred_color_scheme'),
+      /** Language. */
+      lang: z.string().default('en')
     })
   })
 

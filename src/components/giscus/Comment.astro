@@ -1,0 +1,36 @@
+---
+import config from '@/site-config'
+import { cn } from 'astro-pure/utils'
+
+const { class: className } = Astro.props
+---
+
+{
+  config.integ.giscus.enable && (
+    <div id="giscus-container" class={cn('not-prose', className)}>
+      <script
+        src="https://giscus.app/client.js"
+        data-repo={config.integ.giscus.repo}
+        data-repo-id={config.integ.giscus.repoId}
+        data-category={config.integ.giscus.category}
+        data-category-id={config.integ.giscus.categoryId}
+        data-mapping={config.integ.giscus.mapping}
+        data-reactions-enabled={config.integ.giscus.reactionsEnabled ? '1' : '0'}
+        data-emit-metadata={config.integ.giscus.emitMetadata ? '1' : '0'}
+        data-input-position={config.integ.giscus.inputPosition}
+        data-theme={config.integ.giscus.theme}
+        data-lang={config.integ.giscus.lang}
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async
+      ></script>
+    </div>
+  )
+}
+
+<style>
+  #giscus-container {
+    /* Ensure the container takes full width */
+    width: 100%;
+  }
+</style>
