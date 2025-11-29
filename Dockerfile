@@ -1,52 +1,37 @@
 # Build stage
-FROM node:20-alpine AS build
+FROM node:18-alpine AS build
 
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies (use npm install for workspaces)
-RUN npm install
+# Install dependencies
+RUN npm ci
 
-# Copy source files
+# Install @astrojs/node for standalone deployment
+RUN npm install @astrojs/node
+
+# Copy source code
 COPY . .
 
-# Build the Astro site (skip astro-pure check in Docker)
-RUN npx astro check && npx astro build
+# Modify astro.config.ts to use Node adapter instead of Vercel
+RUN sed -i "s/import vercel from '@astrojs\/vercel';/import node from '@astrojs\/node';/" astro.config.ts && \
+    sed -i 's/adapter: vercel(),/adapter: node({ mode: "standalone" }),/' astro.config.ts
 
-# Production stage - SSR requires Node.js server
-FROM node:20-alpine AS production
+# Build the application
+RUN npm run build
 
-# Install dumb-init for proper signal handling
-RUN apk add --no-cache dumb-init
+# Runtime stage
+FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy package files for production dependencies
-COPY package*.json ./
+# Copy built application from build stage
+COPY --from=build /app/dist ./
 
-# Install only production dependencies
-RUN npm ci --only=production && npm cache clean --force
+# Expose port 3000 (default for Astro standalone)
+EXPOSE 3000
 
-# Copy built SSR application from build stage
-COPY --from=build /app/dist ./dist
-
-# Create non-root user for security
-RUN addgroup -g 1001 -S nodejs && \
-    adduser -S astro -u 1001
-
-# Change ownership of app directory
-RUN chown -R astro:nodejs /app
-USER astro
-
-# Expose Astro's default port
-EXPOSE 4321
-
-# Health check for SSR server
-HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:4321/', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) }).on('error', () => process.exit(1))"
-
-# Start the SSR server with dumb-init for proper signal handling
-ENTRYPOINT ["dumb-init", "--"]
-CMD ["node", "./dist/server/entry.mjs"]
+# Start the server
+CMD ["node", "server/entry.mjs"]
