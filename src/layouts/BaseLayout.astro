@@ -4,7 +4,6 @@ import type { SiteMeta } from 'astro-pure/types'
 import BaseHead from '@/components/BaseHead.astro'
 import config from '@/site-config'
 import Analytics from '@vercel/analytics/astro'
-import SpeedInsights from "@vercel/speed-insights/astro"
 
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseLayout /> component.
@@ -47,7 +46,6 @@ const {
       </div>
       <Footer />
       <Analytics />
-      <SpeedInsights />
     </div>
 
     {/* Set highlight color */}
