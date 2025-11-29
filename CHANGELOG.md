@@ -1,3 +1,9 @@
+## [1.0.5](https://github.com/pipitonelabs/blogv2/compare/v1.0.4...v1.0.5) (2025-11-29)
+
+### 🐛 Bug Fixes
+
+* dockerfile expose port ([6e3f4c6](https://github.com/pipitonelabs/blogv2/commit/6e3f4c68655d3dee2cfa7ade5dcfe96a68be33bf))
+
 ## [1.0.4](https://github.com/pipitonelabs/blogv2/compare/v1.0.3...v1.0.4) (2025-11-29)
 
 ### 🐛 Bug Fixes
