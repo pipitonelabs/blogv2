@@ -1,3 +1,9 @@
+## [1.0.4](https://github.com/pipitonelabs/blogv2/compare/v1.0.3...v1.0.4) (2025-11-29)
+
+### 🐛 Bug Fixes
+
+* last try for tonight ([50f9bd5](https://github.com/pipitonelabs/blogv2/commit/50f9bd5f9fee584a6a776f0af9df13f066fa8ec3))
+
 ## [1.0.3](https://github.com/pipitonelabs/blogv2/compare/v1.0.2...v1.0.3) (2025-11-29)
 
 ### 🐛 Bug Fixes
