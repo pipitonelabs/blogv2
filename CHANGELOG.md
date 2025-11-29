@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/pipitonelabs/blogv2/compare/v1.0.0...v1.0.1) (2025-11-29)
+
+### 🐛 Bug Fixes
+
+* build process ([7ee0826](https://github.com/pipitonelabs/blogv2/commit/7ee0826c04039bdb9173ece959678ac19d19ed96))
+
 ## 1.0.0 (2025-11-29)
 
 ### 🚀 Features
