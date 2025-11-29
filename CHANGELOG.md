@@ -1,3 +1,9 @@
+## [1.0.6](https://github.com/pipitonelabs/blogv2/compare/v1.0.5...v1.0.6) (2025-11-29)
+
+### 🐛 Bug Fixes
+
+* hiding nav items for now ([7d646fa](https://github.com/pipitonelabs/blogv2/commit/7d646faf3b43eac4bc35778f5960b47b09c55abd))
+
 ## [1.0.5](https://github.com/pipitonelabs/blogv2/compare/v1.0.4...v1.0.5) (2025-11-29)
 
 ### 🐛 Bug Fixes
