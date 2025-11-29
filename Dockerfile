@@ -32,8 +32,8 @@ WORKDIR /app
 COPY --from=build /app/dist ./
 COPY --from=build /app/node_modules ./node_modules/
 
-# Expose port 3000 (default for Astro standalone)
-EXPOSE 3000
+# Expose port 4321
+EXPOSE 4321
 
 # Start the server
 CMD ["node", "server/entry.mjs"]
