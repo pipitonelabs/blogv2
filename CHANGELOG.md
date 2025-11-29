@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/pipitonelabs/blogv2/compare/v1.0.1...v1.0.2) (2025-11-29)
+
+### 🐛 Bug Fixes
+
+* build ssr ([859fe01](https://github.com/pipitonelabs/blogv2/commit/859fe01e4ddb3ca639f68cb08987263c99c5121e))
+
 ## [1.0.1](https://github.com/pipitonelabs/blogv2/compare/v1.0.0...v1.0.1) (2025-11-29)
 
 ### 🐛 Bug Fixes
