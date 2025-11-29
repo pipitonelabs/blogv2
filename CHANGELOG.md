@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/pipitonelabs/blogv2/compare/v1.0.2...v1.0.3) (2025-11-29)
+
+### 🐛 Bug Fixes
+
+* new dockerfile ([5de8481](https://github.com/pipitonelabs/blogv2/commit/5de8481dcc5b1c7465d246572251e9a6610a6de1))
+
 ## [1.0.2](https://github.com/pipitonelabs/blogv2/compare/v1.0.1...v1.0.2) (2025-11-29)
 
 ### 🐛 Bug Fixes
