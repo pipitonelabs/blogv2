@@ -6,14 +6,14 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci
+# Install dependencies (use npm install for workspaces)
+RUN npm install
 
 # Copy source files
 COPY . .
 
-# Build the Astro site
-RUN npm run build
+# Build the Astro site (skip astro-pure check in Docker)
+RUN npx astro check && npx astro build
 
 # Production stage
 FROM nginx:alpine AS production
